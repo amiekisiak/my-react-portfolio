@@ -1,5 +1,8 @@
 import React from "react";
 import Banner from "../components/Banner";
+import Container from "../components/Container";
+import Row from "../components/Row";
+import Col from "../components/Col";
 
 
 function About() {
