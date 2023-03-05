@@ -1,6 +1,6 @@
 import React from "react";
 import CardBtn from "../CardBtn";
-import "";
+import "../App.css";
 
 function Card(props) {
   return (
