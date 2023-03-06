@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import navIcon1 from '../assets/img/icons8-linkedin-circled.svg';
-import navIcon2 from '../assets/img/icons8-github.svg';
+import navIcon1 from '../src/img/icons8-linkedin-circled.svg';
+import navIcon2 from '../src/img/icons8-github.svg';
 
 
 
