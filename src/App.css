@@ -1,5 +1,13 @@
+/* Font used */
+@font-face {
+	font-family: Centra;
+	src: url('./assets/font/DidactGothic-Regular.ttf');
+	font-weight: 700;
+}
 
-/************ Default Css ************/
+
+
+/* Default Css */
 * {
   margin: 0;
   padding: 0;
