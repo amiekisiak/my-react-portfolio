@@ -8,9 +8,9 @@ import "../App.css";
 function About() {
   return (
     <div>
-      <Banner backgroundImage="https://i.imgur.com/qkdpN.jpg">
-        <h1>Pupster</h1>
-        <h2>They're the Good Boys and Girls</h2>
+      <Banner backgroundImage="">
+        <h1>My name is Aleksandra</h1>
+        <h2>I am a front-end web developer</h2>
       </Banner>
       <Container style={{ marginTop: 30 }}>
         <Row>
