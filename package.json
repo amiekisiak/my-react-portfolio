@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "url-loader": "^4.1.1"
   }
 }
