@@ -5,6 +5,7 @@ import Row from "../components/Row";
 import Col from "../components/Col";
 import "../App.css";
 
+
 function About() {
   return (
     <div>
@@ -15,7 +16,7 @@ function About() {
       <Container style={{ marginTop: 30 }}>
         <Row>
           <Col size="md-12">
-            <h1>Welcome To Pupster!</h1>
+            <h1>Hi There!</h1>
           </Col>
         </Row>
         <Row>
