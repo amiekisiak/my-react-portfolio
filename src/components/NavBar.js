@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import navIcon1 from '../assets/img/nav-icon1.svg';
+import navIcon2 from '../assets/img/nav-icon2.svg';
+import navIcon3 from '../assets/img/nav-icon3.svg';
 
 
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
@@ -44,6 +48,15 @@ function NavBar() {
           </li>
         </ul>
       </div>
+      <div className="social-icon">
+                <a href="#"><img src={navIcon1} alt="" /></a>
+                <a href="#"><img src={navIcon2} alt="" /></a>
+                <a href="#"><img src={navIcon3} alt="" /></a>
+              </div>
+              <HashLink to='#connect'>
+                <button className="vvd"><span> Connect</span></button>
+              </HashLink>
+            
     </nav>
   );
 }
