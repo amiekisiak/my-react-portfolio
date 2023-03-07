@@ -6,6 +6,7 @@ import navIcon2 from '../assets/img/icons8-github.svg';
 
 
 
+
 // Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function NavBar() {
   return (
@@ -50,7 +51,7 @@ function NavBar() {
       </div>
       <div className="social-icon">
                 <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
+                <a href="#https://github.com/amiekisiak"><img src={navIcon2} alt="" /></a>
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span> Connect</span></button>
