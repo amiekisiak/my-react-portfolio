@@ -1,9 +1,9 @@
 import { Container, Row,Tab, Col, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import "./App.css";
-import 'animate.css';
 import TrackVisibility from 'react-on-screen';
 import projImg1 from "../assets/img/projImg1.jpg";
+import projImg2 from "../assets/img/projImg2.jpg";
+import projImg3 from "../assets/img/projImg3.jpg";
 
 
 export const Projects = () => {
@@ -91,7 +91,7 @@ export const Projects = () => {
             </Col>
           </Row>
         </Container>
-        <img className="background-image-right" src={colorSharp2}></img>
+
       </section>
     )
   }
