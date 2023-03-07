@@ -5,6 +5,7 @@ import Navbar from './components/NavBar';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Wrapper from './components/Wrapper';
+import { Projects } from "./components/Projects";
 import { Contact } from "./components/Contact";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -23,11 +24,14 @@ function App() {
             <Routes>
               <Route path="/" element={<About />} />
               <Route path="/about" element={<About />} />
-          
-            </Routes>
+              </Routes>
           </Wrapper>
+          <Projects />
+          <Contact/>
           <Footer />
         </div>
+
+      
       </Router>
     </div>
   );
