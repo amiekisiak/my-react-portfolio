@@ -4,10 +4,6 @@ import { HashLink } from 'react-router-hash-link';
 import navIcon1 from '../assets/img/icons8-linkedin-circled.svg';
 import navIcon2 from '../assets/img/icons8-github.svg';
 
-
-
-
-// Depending on the current path, this component sets the "active" class on the appropriate navigation link item
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,31 +14,28 @@ function NavBar() {
         <ul className="navbar-nav">
           <li className="nav-item">
             <NavLink
+              exact
               to="/"
-              end
-              className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
-              }
+              activeClassName="active"
+              className="nav-link"
             >
-              About
+              Hello
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
-              to="/discover"
-              className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
-              }
+              to="/projects"
+              activeClassName="active"
+              className="nav-link"
             >
               Projects
             </NavLink>
           </li>
           <li className="nav-item">
             <NavLink
-              to="/search"
-              className={({ isActive }) =>
-                isActive ? 'nav-link active' : 'nav-link'
-              }
+              to="/contact"
+              activeClassName="active"
+              className="nav-link"
             >
               Contact Me
             </NavLink>
@@ -50,13 +43,18 @@ function NavBar() {
         </ul>
       </div>
       <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#https://github.com/amiekisiak"><img src={navIcon2} alt="" /></a>
-              </div>
-              <HashLink to='#connect'>
-                <button className="vvd"><span> Connect</span></button>
-              </HashLink>
-            
+        <a href="https://www.linkedin.com/in/amiekisiak/">
+          <img src={navIcon1} alt="LinkedIn" />
+        </a>
+        <a href="https://github.com/amiekisiak">
+          <img src={navIcon2} alt="GitHub" />
+        </a>
+      </div>
+      <HashLink to="#connect">
+        <button className="vvd">
+          <span>Connect</span>
+        </button>
+      </HashLink>
     </nav>
   );
 }

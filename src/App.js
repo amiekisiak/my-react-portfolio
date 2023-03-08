@@ -1,12 +1,16 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
+import Skills from './pages/Skills';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 import Navbar from './components/NavBar';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Wrapper from './components/Wrapper';
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+
+
+
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import background from './assets/img/background-purple.jpg';
@@ -22,16 +26,17 @@ function App() {
     
           <Wrapper>
             <Routes>
-              <Route path="/" element={<About />} />
-              <Route path="/about" element={<About />} />
-              </Routes>
+              <Route path="/" element={<About/>} />
+              <Route path="/projects" element={<Projects/>} />
+              <Route path="/skills/*" element={<Skills />} />
+              <Route path="/contact/*" element={<Contact />} />
+            </Routes>
           </Wrapper>
-          <Projects />
-          <Contact/>
+
+          {/* <Projects /> */}
+          {/* <Contact/> */}
           <Footer />
         </div>
-
-      
       </Router>
     </div>
   );
