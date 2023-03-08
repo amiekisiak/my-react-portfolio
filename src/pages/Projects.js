@@ -1,5 +1,5 @@
 import { Container, Row,Tab, Col, Nav } from "react-bootstrap";
-import { ProjectCard } from "./ProjectCard";
+import { ProjectCard } from "../components/ProjectCard";
 import TrackVisibility from 'react-on-screen';
 import projImg1 from "../assets/img/img_projImg1.png";
 import projImg2 from "../assets/img/img_projImg2.png";
