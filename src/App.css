@@ -1,6 +1,6 @@
 /* Font used */
 @font-face {
-	font-family: Centra;
+	font-family: 'Centra';
 	src: url('./assets/font/DidactGothic-Regular.ttf');
 	font-weight: 700;
 }
@@ -47,7 +47,7 @@ nav.navbar a.navbar-brand {
 }
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  position: relative;
+  position: absolute;
   color: #fff !important;
   letter-spacing: 0.8px;
   padding: 0 25px;
@@ -103,79 +103,10 @@ nav.navbar .navbar-toggler:focus {
 
 .banner {
   margin-top: 0;
-  padding: 260px 0 100px 0;
+  padding: 100px 0 100px 0;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-/*card styles*/
-.banner {
-  margin-top: 0;
-  padding: 260px 0 100px 0;
-  background-position: top center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-.banner .tagline {
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  padding: 8px 10px;
-  background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 20px;
-  margin-bottom: 16px;
-  display: inline-block;
-}
-.banner h1 {
-  font-size: 65px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 1;
-  margin-bottom: 20px;
-  display: block;
-}
-.banner p {
-  color: #B8B8B8;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  line-height: 1.5em;
-  width: 96%;
-}
-.banner button {
-  color: #fff;
-  font-weight: 700;
-  font-size: 20px;
-  margin-top: 60px;
-  letter-spacing: 0.8px;
-  display: flex;
-  align-items: center;
-}
-.banner button svg {
-  font-size: 25px;
-  margin-left: 10px;
-  transition: 0.3s ease-in-out;
-  line-height: 1;
-}
-.banner button:hover svg {
-  margin-left: 25px;
-}
-.banner img {
-  animation: updown 3s linear infinite;
-}
-@keyframes updown {
-    0% {
-        transform: translateY(-20px);
-    }
-    50% {
-        transform: translateY(20px);
-    }
-    100% {
-        transform: translateY(-20px);
-    }
-}
-.txt-rotate > .wrap {
-  border-right: 0.08em solid #666;
 }
 
 
@@ -254,13 +185,18 @@ nav.navbar .navbar-toggler:focus {
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0 55px 55px 0;
 }
-.proj-imgbx {
+.proj-card {
   position: relative;
   border-radius: 30px;
+  height:auto;
   overflow: hidden;
   margin-bottom: 24px;
 }
-.proj-imgbx::before {
+
+.projImg1{
+max-height: 20%;
+}
+.proj-card::before {
   content: "";
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   opacity: 0.85;
@@ -269,10 +205,10 @@ nav.navbar .navbar-toggler:focus {
   height: 0;
   transition: 0.4s ease-in-out;
 }
-.proj-imgbx:hover::before {
+.proj-card:hover::before {
   height: 100%;
 }
-.proj-txtx {
+.proj-card-text {
   position: absolute;
   text-align: center;
   top: 65%;
@@ -282,17 +218,17 @@ nav.navbar .navbar-toggler:focus {
   opacity: 0;
   width: 100%;
 }
-.proj-imgbx:hover .proj-txtx {
+.proj-card:hover .proj-card-text {
   top: 50%;
   opacity: 1;
 }
-.proj-txtx h4 {
+.proj-card-text h4 {
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
 }
-.proj-txtx span {
+.proj-card-text {
   font-style: italic;
   font-weight: 400;
   font-size: 15px;
@@ -380,7 +316,7 @@ nav.navbar .navbar-toggler:focus {
 
 /*Footer styles */
 .footer {
-  padding: 0 0 50px 0;
+  padding: 0 0 70px 0;
 
   background-position: center center;
   background-size: cover;

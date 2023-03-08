@@ -1,9 +1,9 @@
 import { Container, Row,Tab, Col, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import TrackVisibility from 'react-on-screen';
-import projImg1 from "../assets/img/projImg1.jpg";
-import projImg2 from "../assets/img/projImg2.jpg";
-import projImg3 from "../assets/img/projImg3.jpg";
+import projImg1 from "../assets/img/img_projImg1.png";
+import projImg2 from "../assets/img/img_projImg2.png";
+import projImg3 from "../assets/img/img_projImg3.png";
 
 
 export const Projects = () => {
