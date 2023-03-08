@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './pages/About';
 import Navbar from './components/NavBar';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Wrapper from './components/Wrapper';
-import { Projects } from "./components/Projects";
-import { Contact } from "./components/Contact";
+import Projects from ".pages/Projects";
+import  Contact from ".pages/Contact";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import background from './assets/img/background-purple.jpg';
