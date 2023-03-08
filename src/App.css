@@ -249,7 +249,38 @@ max-height: 20%;
 }
 .contact img {
   width: 92%;
+  float: left; /* float the image to the left */
+  animation: float 2s ease-in-out infinite; /* animate the image using the "float" animation */
 }
+
+@keyframes float {
+  0% {
+ 
+    transform: translatey(0px);
+  }
+  50% {
+  
+    transform: translatey(-20px);
+  }
+  100% {
+  
+    transform: translatey(0px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .contact h2 {
 	font-size: 45px;
 	font-weight: 700;

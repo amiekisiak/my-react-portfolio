@@ -13,7 +13,7 @@ import Wrapper from './components/Wrapper';
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import background from './assets/img/background-purple.jpg';
+import background from './assets/img/background-pic.jpg';
 
 function App() {
   return (
