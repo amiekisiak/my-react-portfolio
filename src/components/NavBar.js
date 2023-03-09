@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import navIcon1 from '../assets/img/icons8-linkedin-circled.svg';
 import navIcon2 from '../assets/img/icons8-github.svg';
-
+import navIcon3 from '../assets/img/icons8-note-64png';
 
 
 function NavBar() {
@@ -26,7 +26,7 @@ function NavBar() {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <NavLink exact to="/" activeclassname="active" className="nav-link">
+            <NavLink to ="/" activeclassname="active" className="nav-link">
               Hello
             </NavLink>
           </li>
@@ -65,6 +65,9 @@ function NavBar() {
         </a>
         <a href="https://github.com/amiekisiak" target="_blank" rel="noopener noreferrer">
           <img src={navIcon2} alt="GitHub" />
+        </a>
+        <a href="https://github.com/amiekisiak" target="_blank" rel="noopener noreferrer">
+          <img src={navIcon2} alt="Resume" />
         </a>
       </div>
     </nav>

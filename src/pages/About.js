@@ -9,7 +9,7 @@ import "../App.css";
 function About() {
   return (
     <div>
-          <Banner BackgroundImage="">
+          <Banner>
         <h1>My name is Aleksandra</h1>
         <h2>I am a front-end web developer</h2>
       </Banner>

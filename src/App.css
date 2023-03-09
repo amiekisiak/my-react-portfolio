@@ -11,7 +11,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  max-width: 1440px;
+  max-width: 100%;
 }
 
 
@@ -91,7 +91,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   
   /*projects styles*/
   .project {
-    padding: 80px 0;
+    padding: 50px 0;
     position: relative;
     background-color: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   }
@@ -163,16 +163,19 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     border-radius: 0 55px 55px 0;
   }
   .proj-card {
-   position:relative;
-    border-radius: 30px;
-    height: 20%;
+    position:relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 40px;
+    height: 100%;
     overflow: hidden;
-    margin-bottom: 24px;
-  }
-  
-  .projImg1{
-  max-height: 20%;
-  }
+    margin-bottom: 80px;
+   }
+ 
+
+   .projImg4{
+   background-size: cover;
+   }
   .proj-card::before {
     content: "";
     background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
