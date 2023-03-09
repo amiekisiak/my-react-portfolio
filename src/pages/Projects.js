@@ -4,6 +4,9 @@ import TrackVisibility from 'react-on-screen';
 import projImg1 from "../assets/img/img_projImg1.png";
 import projImg2 from "../assets/img/img_projImg2.png";
 import projImg3 from "../assets/img/img_projImg3.png";
+import projImg4 from "../assets/img/img_projImg4.png";
+import projImg5 from "../assets/img/img_projImg5.png";
+import projImg6 from "../assets/img/img_projImg6.png";
 
 
 export const Projects = () => {
@@ -27,17 +30,17 @@ export const Projects = () => {
       {
         title: "Business Startup",
         description: "Design & Development",
-        imgUrl: projImg1,
+        imgUrl: projImg4,
       },
       {
         title: "Business Startup",
         description: "Design & Development",
-        imgUrl: projImg2,
+        imgUrl: projImg5,
       },
       {
         title: "Business Startup",
         description: "Design & Development",
-        imgUrl: projImg3,
+        imgUrl: projImg6,
       },
     ];
   
@@ -96,5 +99,6 @@ export const Projects = () => {
     )
   }
 
-  
-export default Projects;
+
+  export default Projects;
+
