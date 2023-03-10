@@ -4,7 +4,7 @@ import "../App.css";
 function Footer() {
   return (
     <footer className="footer">
-      <span>Aleksandra Miekisiak 2023</span>
+      <span></span>
     </footer>
   );
 }
