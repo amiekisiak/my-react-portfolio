@@ -34,7 +34,7 @@ function NavBar() {
               activeclassname="active"
               className="nav-link"
             >
-              Projects
+              My Projects
             </NavLink>
           </li>
           <li className="nav-item">
