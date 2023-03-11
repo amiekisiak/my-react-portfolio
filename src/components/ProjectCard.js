@@ -14,14 +14,14 @@ export const ProjectCard = ({ title, description, imgUrl, githubUrl, demoUrl }) 
         </Card.Body>
       </Card>
       <div className="button-group">
-        <Link to={githubUrl} target="_blank" rel="noopener noreferrer">
+        <Link to={githubUrl} target="_blank" rel="noopener noreferrer"className="github-link">
           <Button variant="success">
-            GitHub Repo
+            See it in GitHub
           </Button>
         </Link>
-        <Link to={demoUrl} target="_blank" rel="noopener noreferrer">
+        <Link to={demoUrl} target="_blank" rel="noopener noreferrer"className="demo-link">
           <Button variant="success">
-            Demo
+           See the demo
           </Button>
         </Link>
       </div>
