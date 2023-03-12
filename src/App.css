@@ -160,8 +160,11 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .social-icon a {
+  display: flex;
   width: 42px;
   height: 42px;
+  font-size: 24px;
+  transition: all 0.2s ease-in-out;
   background: rgba(217, 217, 217, 0.1);
   display: inline-flex;
   border-radius: 50%;
@@ -170,6 +173,10 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   justify-content: center;
   line-height: 1;
   border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.social-icon:active {
+  transform: scale(1.2);
 }
 
 .social-icon a::before {
@@ -188,8 +195,9 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .social-icon a img {
-  width: 40%;
+  width: 100%;
   z-index: 1;
+  box-shadow: #121212;
   transition: 0.3s ease-in-out;
 }
 

@@ -66,7 +66,7 @@ function About() {
               I am a passionate front-end developer who is ready to learn and build the next generation of web applications!
             </animated.p>
             <animated.div style={linkProps}>
-              You can connect wirh me and see my Resume below!
+              You can connect with me and see my Resume below!
               <div className="social-icon">
                 <a href="https://github.com/amiekisiak" target="_blank" rel="noopener noreferrer">
                   <img src={navIcon1} alt="LinkedIn" />

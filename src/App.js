@@ -9,7 +9,7 @@ import Navbar from './components/NavBar';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Wrapper from './components/Wrapper';
-
+import Particle from './components/Particle'; //importing the Particle component
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import background from './assets/img/background-pic.jpg';
@@ -30,6 +30,7 @@ function App() {
                 <Route path="/projects" element={<Projects/>} />
                 <Route path="/skills/*" element={<Skills />} />
                 <Route path="/contact/*" element={<Contact />} />
+                <Route path="/particle" element={<Particle />} /> {/* adding the Particle route */}
               </Routes>
             </Wrapper>
 
