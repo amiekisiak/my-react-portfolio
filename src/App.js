@@ -18,7 +18,7 @@ function App() {
   return (
     <CSSTransition in={true} appear={true} timeout={1000} classNames="fade">
       <div style={{ backgroundImage: `url(${background})` }}>
-        Hi
+        
         <Router>
           <div>
             <Navbar/>

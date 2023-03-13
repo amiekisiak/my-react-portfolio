@@ -14,8 +14,6 @@
   max-width: 100%;
 }
 
-
-
 html {
 
   scroll-behavior: smooth;
@@ -26,8 +24,7 @@ body {
   font-weight: 400;
   overflow-x: hidden;
   height: 100%;
-  position: relative;
-  background-color: #121212 !important;
+  position: relative; 
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
 }
@@ -35,6 +32,8 @@ body {
 /*navbar styles*/
 
 nav.navbar {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff!important;
   padding: 18px 0;
   position: absolute;
   width: 100%;
@@ -45,7 +44,7 @@ nav.navbar {
 
 nav.navbar.scrolled {
   padding: 0px 0;
-  background-color: #121212;
+  background-color: #e3d1d1;
 }
 
 nav.navbar a.navbar-brand {
@@ -54,7 +53,8 @@ nav.navbar a.navbar-brand {
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  position: absolute;
+  position:relative;
+  margin-left: 50px ;
   color: #fff !important;
   letter-spacing: 0.8px;
   padding: 0 25px;
@@ -91,6 +91,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
   
 
+
 .banner h1 {
   overflow: hidden;
   white-space: nowrap;
@@ -106,51 +107,102 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
     width: 100%;
   }
 }
-
-#my-description{
-  
-  float: left;
-  /* float the image to the left */
-  animation: float 2s ease-in-out infinite;
-  /* animate the image using the "float" animation */
+.social-icon a {
+  display: inline-flex;
+  margin-top: 20px;
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease-in-out;
 }
 
-@keyframes float {
-  0% {
-
-    transform: translatey(0px);
-  }
-
-  50% {
-
-    transform: translatey(-20px);
-  }
-
-  100% {
-
-    transform: translatey(0px);
-  }
+.social-icon a:hover {
+  transform: scale(1.8);
 }
+
+
 
 
 /*projects styles*/
-.projects {
-
-  padding: 40px 0;
-  position: relative;
-  background-color: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+.projects{
+  width: 100%;
+  background-image:  linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
 }
+
+#card{
+width: 18rem;
+background: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.5);
+
+}
+
+#project-card{
+  display: flex;
+  width: 100%;
+  background:  linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
+  color: #fff;
+  margin: 0 0 8px 0;
+  padding: 200px 50px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.8px;
+  transition: 0.3s ease-in-out;
+ 
+}
+.project-card-wrapper {
+  height: 400px; /* Set the desired height for the cards */
+  overflow: hidden; /* Hide any content that exceeds the height */
+}
+
+
+
+
+
 
 .project-img {
   height: 200px;
-  /* set a fixed height */
   width: 50%;
-  /* set a fixed width */
   object-fit: cover;
-  /* maintain aspect ratio */
   width: fit-content;
 }
+.button-group {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
 
+.button-group > * {
+  margin: 0 0.5rem;
+}
+
+
+
+
+.github-button,.demo-button {
+  background-image: linear-gradient(#0dccea, #0d70ea);
+  border: 0;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+  box-sizing:border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: Montserrat,sans-serif;
+  font-size: .9em;
+  margin: 5px;
+  padding: 5px 5px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.github-button:hover, .demo-button:hover {
+  background-image: linear-gradient(#0d70ea, #0dccea);
+  box-sizing: border-box; 
+}
+
+.demo-button{
+  background-color:rebeccapurple !important;
+}
 #card {
   padding: 10px;
   margin: 2rem;
@@ -158,51 +210,12 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
   color: #dcd7e0;
 }
-
-.social-icon a {
-  display: flex;
-  width: 42px;
-  height: 42px;
-  font-size: 24px;
-  transition: all 0.2s ease-in-out;
-  background: rgba(217, 217, 217, 0.1);
-  display: inline-flex;
-  border-radius: 50%;
-  margin-right: 6px;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+.project-card {
+  transition: all 0.3s ease;
 }
 
-.social-icon:active {
-  transform: scale(1.2);
-}
-
-.social-icon a::before {
-  content: "";
-  width: 42px;
-  height: 42px;
-  position: absolute;
-  background-color: #ffffff;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 0.3s ease-in-out;
-}
-
-.social-icon a:hover::before {
-  transform: scale(1);
-}
-
-.social-icon a img {
-  width: 100%;
-  z-index: 1;
-  box-shadow: #121212;
-  transition: 0.3s ease-in-out;
-}
-
-.social-icon a:hover img {
-  filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+.project-card.expanded {
+  transform: scale(1.1);
 }
 
 /*Skills styles*/

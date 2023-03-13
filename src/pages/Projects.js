@@ -1,5 +1,6 @@
 import { ProjectCard } from "../components/ProjectCard";
-import { Container, Row, Tab, Col, Nav, Carousel } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
 import TrackVisibility from "react-on-screen";
 import projImg1 from "../assets/img/img_projImg1.png";
 import projImg2 from "../assets/img/img_projImg2.png";
@@ -12,7 +13,7 @@ export const Projects = () => {
   const projects = [
     {
       title: "workday-planner",
-      description: " Simple calendar application that allows a user to save events for each hour of the day",
+      description: "App that allows a user to save events for each hour of the day",
       imgUrl: projImg1,
       githubUrl: "https://github.com/amiekisiak/workday-planner",
       demoUrl: "https://amiekisiak.github.io/workday-planner/",
@@ -40,85 +41,55 @@ export const Projects = () => {
     },
     {
       title: "my-coding-quiz",
-      description: "Timed coding quiz with multiple-choice questions ",
+      description: "Timed coding quiz with multiple-choice questions with added sounds ",
       imgUrl: projImg5,
       githubUrl: "https://github.com/amiekisiak/my-coding-quiz",
       demoUrl: "https://amiekisiak.github.io/my-coding-quiz/",
     },
     {
       title: "tasty-fact",
-      description: "This was team project.An app, which allows user to find a recipes from around the world, while learning facts about the country of choice.",
+      description: "Team project. An app allowing user to find a recipes from around the worldand to learn facts about the country of choice.",
       imgUrl: projImg6,
       githubUrl: "https://github.com/vaselisk999/tasty-facts",
       demoUrl: "https://vaselisk999.github.io/tasty-facts/",
     },
   ];
+
+  const [isPaused, setIsPaused] = useState(false);
+
+  const handleCardClick = () => {
+    setIsPaused(true);
+  };
+
   return (
-    <section className="project" id="project">
+    <section className="project-card" id="project-card">
       <Container>
-        <Row>
-          <Col size={12}>
-            <TrackVisibility>
-              {({ isVisible }) => 
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                  <h2>My Projects</h2>
-                  <p>Please see my projects below</p>
-                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
-                    <Nav
-                      variant="pills"
-                      className="nav-pills mb-5 justify-content-center align-items-center"
-                      id="pills-tab"
-                    >
-                      <Nav.Item>
-                        <Nav.Link eventKey="first">Tab 1</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="second">Tab 2</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey="third">Tab 3</Nav.Link>
-                      </Nav.Item>
-                    </Nav>
-                    <Tab.Content
-                      id="slideInUp"
-                      className={isVisible ? "animate__animated animate__slideInUp" : ""}
-                    >
-                      <Tab.Pane eventKey="first">
-                        <Row>
-                          {projects.map((project, index) => {
-                            return (
-                              <ProjectCard
-                                key={index}
-                                title={project.title}
-                                description={project.description}
-                                imgUrl={project.imgUrl}
-                                url={project.demoUrl ? project.demoUrl : project.githubUrl}
-                                target={project.demoUrl ? "_blank" : ""}
-                                githubUrl={project.githubUrl}
-                                demoUrl={project.demoUrl}
-                              />
-                            );
-                          })}
-                        </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="section">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-               Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey="third">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque quam, quod neque provident velit, rem explicabo excepturi id illo molestiae blanditiis, eligendi dicta officiis asperiores delectus quasi inventore debitis quo.</p>
-                      </Tab.Pane>
-                    </Tab.Content>
-                  </Tab.Container>
-                </div>}
-              </TrackVisibility>
-            </Col>
-          </Row>
-        </Container>
+        <TrackVisibility>
+          {({ isVisible }) => (
+            <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+              <h2>My Projects</h2>
+              <p>Please take a look at some of my projects below.</p>
+<Row>
+{projects.map((project) => (
+<Col lg={4} mb={6} key={project.title}>
+<ProjectCard
+                   title={project.title}
+                   description={project.description}
+                   imgUrl={project.imgUrl}
+                   githubUrl={project.githubUrl}
+                   demoUrl={project.demoUrl}
+                   handleCardClick={handleCardClick}
+                   isPaused={isPaused}
+                 />
+</Col>
+))}
+</Row>
+</div>
+)}
+</TrackVisibility>
+</Container>
+</section>
+);
+};
 
-      </section>
-    )
-  }
-
-  export default Projects;
+export default Projects;
