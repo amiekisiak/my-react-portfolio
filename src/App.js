@@ -12,7 +12,7 @@ import Wrapper from './components/Wrapper';
 import Particle from './components/Particle'; //importing the Particle component
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import background from './assets/img/background-pic.jpg';
+import background from './assets/img/background.png';
 
 function App() {
   return (

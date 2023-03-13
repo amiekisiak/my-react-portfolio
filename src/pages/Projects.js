@@ -8,6 +8,7 @@ import projImg3 from "../assets/img/img_projImg3.png";
 import projImg4 from "../assets/img/img_projImg4.png";
 import projImg5 from "../assets/img/img_projImg5.png";
 import projImg6 from "../assets/img/img_projImg6.png";
+import "../App.css";
 
 export const Projects = () => {
   const projects = [
@@ -47,7 +48,7 @@ export const Projects = () => {
       demoUrl: "https://amiekisiak.github.io/my-coding-quiz/",
     },
     {
-      title: "tasty-fact",
+      title: "tasty-facts",
       description: "Team project. An app allowing user to find a recipes from around the worldand to learn facts about the country of choice.",
       imgUrl: projImg6,
       githubUrl: "https://github.com/vaselisk999/tasty-facts",
@@ -67,29 +68,39 @@ export const Projects = () => {
         <TrackVisibility>
           {({ isVisible }) => (
             <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-              <h2>My Projects</h2>
-              <p>Please take a look at some of my projects below.</p>
-<Row>
-{projects.map((project) => (
-<Col lg={4} mb={6} key={project.title}>
-<ProjectCard
-                   title={project.title}
-                   description={project.description}
-                   imgUrl={project.imgUrl}
-                   githubUrl={project.githubUrl}
-                   demoUrl={project.demoUrl}
-                   handleCardClick={handleCardClick}
-                   isPaused={isPaused}
-                 />
-</Col>
-))}
-</Row>
+              <h2 className="projects-heading" id="heading">My Projects</h2>
+              <p className="projects-description" id="description">Please take a look at some of my projects below.</p>
+
+              <Row>
+                {projects.map((project) => (
+                  <Col lg={4} mb={6} key={project.title}>
+                   <div className="project-card__item">
+  <ProjectCard
+    title={project.title}
+    description={project.description}
+    imgUrl={project.imgUrl}
+    githubUrl={project.githubUrl}
+    demoUrl={project.demoUrl}
+    handleCardClick={handleCardClick}
+    isPaused={isPaused}
+  />
+  <a
+    className="project-card__button"
+    href={project.demoUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+  ></a>
 </div>
-)}
-</TrackVisibility>
-</Container>
-</section>
-);
+
+                  </Col>
+                ))}
+              </Row>
+            </div>
+          )}
+        </TrackVisibility>
+      </Container>
+    </section>
+  );
 };
 
 export default Projects;
