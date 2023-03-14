@@ -23,7 +23,7 @@ html {
 body {
   font-weight: 400;
   overflow-x: hidden;
-  height: 100%;
+  height: 100vh;
   position: relative;
   color: #fff !important;
   font-family: 'Centra', sans-serif !important;
@@ -32,8 +32,8 @@ body {
 /*navbar styles*/
 
 nav.navbar {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1)!important;
+  color: #ffe6e6 !important;
   padding: 18px 0;
   position: absolute;
   width: 100%;
@@ -53,7 +53,7 @@ nav.navbar a.navbar-brand {
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  position: relative;
+  position:absolute;
   margin-left: 50px;
   color: #fff !important;
   letter-spacing: 0.8px;
@@ -67,11 +67,24 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   opacity: 1;
 }
 
+.navbar-nav .nav-link {
+  
+  position:relative;
+  color: #fffafa;
+  font-size: large;
+  margin-left: 0px;
+}
+
+
+
+
+
 /*banner styles*/
 
 .banner {
   margin-top: 0;
-  padding: 100px 0 100px 0;
+  padding: 80px 0 100px 0;
+  padding-bottom: 50px;
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -91,8 +104,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   object-fit: cover;
 }
 
-
-
 .banner h1 {
   overflow: hidden;
   white-space: nowrap;
@@ -110,6 +121,10 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   }
 }
 
+.description{
+font-size: 2rem;
+}
+
 .social-icon a {
   display: inline-flex;
   margin-top: 20px;
@@ -122,14 +137,37 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   transform: scale(1.8);
 }
 
+#button-about{
+background-color: transparent!important;
+cursor: pointer;
+font-family: Montserrat, sans-serif;
+font-size: .6em;
+border-color: #ece6e9;
+margin: 5px;
+padding: 5px 5px;
+text-align: center;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
 
 
+}
+#button-about:hover {
+  background-image: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%) ! important;
+  box-sizing: border-box! important;
+}
 
 /*projects styles*/
 .projects {
   width: 100%;
   background-image: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
 
+}
+
+#proj-des{
+  font:bolder;
+  font-size: 1.5rem;
+  margin-left: 29%;
 }
 
 #heading {
@@ -152,13 +190,6 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 
-#description {
-  display: inline-block;
-  margin-left: 25%;
-  font-size: 25px;
-  padding: 30px;
-}
-
 #card {
   padding: 10px;
   box-shadow: rgba(0, 0, 0, .4) 0 5px 15px;
@@ -169,17 +200,37 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   color: #dcd7e0;
 }
 
-.project-card {
+.project_card {
   transition: all 0.3s ease;
 }
 
-.project-card__item {
+.project-card__item:hover {
   transition: transform 0.3s ease;
 }
 
 
 .project-card__item:hover {
   transform: scale(1.1);
+}
+
+
+.project-card__item.slide-in {
+  animation: slide-in 0.4s ease-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .project-card-wrapper {
@@ -206,7 +257,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 
 .github-button,
 .demo-button {
-  background: transparent!important;
+  background: transparent !important;
   border-radius: 1px;
   border: 3px solid white;
   border: #fff !important;
@@ -231,12 +282,20 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 /*Skills styles*/
+
 .skills {
+  opacity: 0; 
+  transform: translateX(-100%); 
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
   text-align: center;
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  padding: 270px 0 200px 0;
+  height: 100%;
+  padding: 100px 0 100px 0;         
 }
 
+.skills.animate {
+  opacity: 1;
+  transform: translateX(0); 
+}
 .skills h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
@@ -248,6 +307,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   align-items: center;
   flex-wrap: wrap;
   margin: 0 auto;
+  margin-bottom: 50%;
   max-width: 800px;
 }
 
@@ -255,23 +315,19 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   width: 4rem;
   height: 4rem;
   margin: 1rem;
-  color: #555;
+  color: #190457;
   transition: all 0.2s ease-in-out;
 }
 
 .skills-icons svg:hover {
   color: #61dbfb;
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 
 /*Contact Form styles*/
-.contact {
-  background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
-  padding: 60px 0 200px 0;
-}
 
-.contact img {
-  width: 92%;
+.contact-img {
+  width: 30%;
   float: left;
   /* float the image to the left */
   animation: float 2s ease-in-out infinite;
@@ -295,86 +351,49 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   }
 }
 
-.contact h2 {
-  font-size: 45px;
-  font-weight: 700;
-  margin-bottom: 30px;
+
+
+
+
+
+.ContactForm{
+width: 100%;
+padding-bottom: 170px;
 }
 
-.contact form input,
-.contact form textarea {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  color: #fff;
-  margin: 0 0 8px 0;
-  padding: 18px 26px;
-  font-weight: 500;
-  font-size: 18px;
-  letter-spacing: 0.8px;
-  transition: 0.3s ease-in-out;
+.Contact-me{
+font-size: 2rem;
+padding-bottom: 20px;
+}
+.btn-primary, 
+.btn-danger{
+  background: transparent !important;
+  border-radius: 1px;
+  border: 3px solid white;
+  border: #fff !important;
+  box-shadow: rgba(0, 0, 0, .3) 0 5px 15px;
+  box-sizing: border-box;
+  color: fff;
+  cursor: pointer;
+  font-family: Montserrat, sans-serif;
+  font-size: .9em;
+  margin: 5px;
+  padding: 10px 10px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.btn-primary:hover,
+.btn-danger:hover {
+  background-image: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%) ! important;
+  box-sizing: border-box;
 }
 
-.contact form input:focus,
-.contact form textarea:focus {
-  background: rgba(255, 255, 255, 1);
-  color: #121212;
-}
-
-.contact form input::placeholder,
-.contact form textarea::placeholder {
-  font-size: 16px;
-  font-weight: 400;
-  color: #fff;
-}
-
-.contact form input:focus::placeholder,
-.contact form textarea:focus::placeholder {
-  color: #121212;
-  opacity: 0.8;
-}
-
-.contact form button {
-  font-weight: 700;
-  color: #000;
-  background-color: #fff;
-  padding: 14px 48px;
-  font-size: 18px;
-  margin-top: 25px;
-  border-radius: 0;
-  position: relative;
-  transition: 0.3s ease-in-out;
-}
-
-.contact form button span {
-  z-index: 1;
-  position: relative;
-}
-
-.contact form button:hover {
-  color: #fff;
-}
-
-.contact form button::before {
-  content: "";
-  background: #121212;
-  width: 0;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: 0.3s ease-in-out;
-}
-
-.contact form button:hover::before {
-  width: 100%;
-}
 
 /*Footer styles */
 .footer {
-  padding: 0 0 70px 0;
+  padding: 10px;
 
   background-position: center center;
   background-size: cover;

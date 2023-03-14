@@ -1,98 +1,154 @@
-import { useState } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import TrackVisibility from 'react-on-screen';
+import { useRef } from "react";
+import { Transition } from 'react-transition-group';
+import { useForm } from 'react-hook-form';
 import contactImg from "../assets/img/icons8-mailbox.svg";
 
+const ContactForm = () => {
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm();
 
-export const Contact = () => {
-  const formInitialDetails = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: ''
+  const formRef = useRef(); // Create a ref for the form element
+  const transitionRef = useRef(); // Create a ref for the Transition element
+
+  const onSubmit = async () => {
+    const formData = new FormData(formRef.current); // Access form data using the ref
+    const { name, email, subject, message } = Object.fromEntries(formData.entries());
+
+    console.log('Name: ', name);
+    console.log('Email: ', email);
+    console.log('Subject: ', subject);
+    console.log('Message: ', message);
+  };
+
+  const duration = 300;
+
+  const defaultStyle = {
+    transition: `opacity ${duration}ms ease-in-out`,
+    opacity: 0,
   }
-  const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [buttonText, setButtonText] = useState('Send');
-  const [status, setStatus] = useState({});
 
-  const onFormUpdate = (category, value) => {
-      setFormDetails({
-        ...formDetails,
-        [category]: value
-      })
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(formDetails),
-    });
-    setButtonText("Send");
-    let result = await response.json();
-    setFormDetails(formInitialDetails);
-    if (result.code === 200) {
-      setStatus({ succes: true, message: 'Message sent successfully'});
-    } else {
-      setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
-    }
+  const transitionStyles = {
+    entering: { opacity: 0 },
+    entered:  { opacity: 1 },
+    exiting: { opacity: 0 },
+    exited: { opacity: 0 },
   };
 
   return (
-    <section className="contact" id="connect">
-      <Container>
-        <Row className="align-items-center">
-          <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <img className={isVisible ? "animate__animated animate__zoomIn" : ""} src={contactImg} alt="Contact Us"/>
-              }
-            </TrackVisibility>
-          </Col>
-          <Col size={12} md={6}>
-            <TrackVisibility>
-              {({ isVisible }) =>
-                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h2>Get In Touch</h2>
-                <form onSubmit={handleSubmit}>
-                  <Row>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.firstName} placeholder="First Name" onChange={(e) => onFormUpdate('firstName', e.target.value)} />
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lasttName} placeholder="Last Name" onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="email" value={formDetails.email} placeholder="Email Address" onChange={(e) => onFormUpdate('email', e.target.value)} />
-                    </Col>
-                    <Col size={12} sm={6} className="px-1">
-                      <input type="tel" value={formDetails.phone} placeholder="Phone No." onChange={(e) => onFormUpdate('phone', e.target.value)}/>
-                    </Col>
-                    <Col size={12} className="px-1">
-                      <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                      <button type="submit"><span>{buttonText}</span></button>
-                    </Col>
-                    {
-                      status.message &&
-                      <Col>
-                        <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
-                      </Col>
-                    }
-                  </Row>
-                </form>
-              </div>}
-            </TrackVisibility>
-          </Col>
-        </Row>
-      </Container>
-    </section>
-  )
-}
-
-
-export default Contact;
+    <div className='ContactForm'>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-12 text-center'>
+            <div className='contactForm'>
+            <img className='contact-img' src={contactImg} alt="Contact Us"/>
+              <div className ='Contact-me'>Contact Me!</div>
+              <Transition in={true} timeout={duration} nodeRef={transitionRef}>
+                {(state) => (
+                  <form
+                    id='contact-form'
+                    ref={formRef}
+                    onSubmit={handleSubmit(onSubmit)}
+                    noValidate
+                    style={{
+                      ...defaultStyle,
+                      ...transitionStyles[state]
+                    }}
+                  >
+                    {/* Row 1 of form */}
+                    <div className='row formRow'>
+                      <div className='col-6'>
+                        <input
+                          type='text'
+                          name='name'
+                          {...register('name', {
+                            required: { value: true, message: 'Please enter your name' },
+                            maxLength: {
+                              value: 30,
+                              message: 'Please use 30 characters or less'
+                            }
+                          })}
+                          className='form-control formInput'
+                          placeholder='Name'
+                        ></input>
+                        {errors.name && <span className='errorMessage'>{errors.name.message}</span>}
+                      </div>
+                      <div className='col-6'>
+                        <input
+                          type='email'
+                          name='email'
+                          {...register('email', {
+                            required: true,
+                            pattern: /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+                          })}
+                          className='form-control formInput'
+                          placeholder='Email address'
+                        ></input>
+                        {errors.email &&<span className='errorMessage'>Please enter a valid email address</span>}
+                      </div>
+                    </div>
+                    {/* Row 2 of form */}
+                    <div className='row formRow'>
+                      <div className='col-12'>
+                        <input
+                          type='text'
+                          name='subject'
+                          {...register('subject', {
+                            required: { value: true, message: 'Please enter a subject' },
+                            maxLength: {
+                              value: 75,
+                              message: 'Subject cannot exceed 75 characters'
+                            }
+                          })}
+                          className='form-control formInput'
+                          placeholder='Subject'
+                          ></input>
+                          {errors.subject && <span className='errorMessage'>{errors.subject.message}</span>}
+                          </div>
+                          </div>
+                          {/* Row 3 of form */}
+                          <div className='row formRow'>
+                          <div className='col-12'>
+                          <textarea
+                          name='message'
+                          {...register('message', {
+                          required: true
+                          })}
+                          className='form-control formInput'
+                          placeholder='Message'
+                          ></textarea>
+                          {errors.message && <span className='errorMessage'>Please enter a message</span>}
+                          </div>
+                          </div>
+                          {/* Row 4 of form */}
+                          <div className='row formRow'>
+                          <div className='col-12'>
+                          <button type='submit' className='btn btn-primary'>
+                          Submit
+                          </button>
+                          <button
+                          type='button'
+                          className='btn btn-danger'
+                          onClick={() => {
+                          reset();
+                          }}
+                          >
+                          Clear
+                          </button>
+                          </div>
+                          </div>
+                          </form>
+                          )}
+                          </Transition>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          );
+                          };
+                          
+                          export default ContactForm;

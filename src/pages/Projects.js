@@ -64,34 +64,33 @@ export const Projects = () => {
 
   return (
     <section className="project-card" id="project-card">
-      <Container>
+   <Container className="project-card__item slide-in">
         <TrackVisibility>
           {({ isVisible }) => (
-            <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+            <div>
               <h2 className="projects-heading" id="heading">My Projects</h2>
-              <p className="projects-description" id="description">Please take a look at some of my projects below.</p>
+              <p className="projects-description" id="proj-des">Please take a look at some of my projects below</p>
 
               <Row>
                 {projects.map((project) => (
                   <Col lg={4} mb={6} key={project.title}>
-                   <div className="project-card__item">
-  <ProjectCard
-    title={project.title}
-    description={project.description}
-    imgUrl={project.imgUrl}
-    githubUrl={project.githubUrl}
-    demoUrl={project.demoUrl}
-    handleCardClick={handleCardClick}
-    isPaused={isPaused}
-  />
-  <a
-    className="project-card__button"
-    href={project.demoUrl}
-    target="_blank"
-    rel="noopener noreferrer"
-  ></a>
-</div>
-
+                    <div className="project-card__item">
+                      <ProjectCard
+                        title={project.title}
+                        description={project.description}
+                        imgUrl={project.imgUrl}
+                        githubUrl={project.githubUrl}
+                        demoUrl={project.demoUrl}
+                        handleCardClick={handleCardClick}
+                        isPaused={isPaused}
+                      />
+                      <a
+                        className="project-card__button"
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      ></a>
+                    </div>
                   </Col>
                 ))}
               </Row>
