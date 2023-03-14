@@ -8,9 +8,10 @@
 
   ## Deployed Application
 
-  This application was deployed at ![https://amiekisiak.github.io/my-react-portfolio/](https://amiekisiak.github.io/my-react-portfolio/)
 
-  ## Screenshot
+  This application was deployed here:  :arrow_right:[my-react-portfolio](https://amiekisiak.github.io/my-react-portfolio/):arrow_left:
+  
+ ## Screenshot
 
   ![screencapture-localhost-3000-2023-03-14-15_35_44](https://user-images.githubusercontent.com/117371691/225054396-e8684bfd-fedc-4b9b-ad45-c5d1fe9c086e.png)
   
