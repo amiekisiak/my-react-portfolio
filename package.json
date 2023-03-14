@@ -1,4 +1,5 @@
-{
+{ 
+  "homepage": "http://amiekisiak.github.io/my-react-portfolio/",
   "name": "my-react-portfolio",
   "version": "0.1.0",
   "private": true,
@@ -18,6 +19,7 @@
     "emailjs-com": "^3.2.0",
     "favicons": "^7.1.0",
     "framer-motion": "^10.2.4",
+    "gh-pages": "^5.0.0",
     "gsap": "^3.11.4",
     "inquirer": "^6.5.0",
     "mdb-react-ui-kit": "^5.1.0",
@@ -47,7 +49,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+
   },
   "eslintConfig": {
     "extends": [
