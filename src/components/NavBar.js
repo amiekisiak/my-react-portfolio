@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-;
-
 
 function NavBar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-        <img src="" alt="" />
-        Ale
+        <img
+          src="https://media.giphy.com/media/l0NwPo4YFfmS6pHCC/giphy.gif"
+          alt="Logo"
+          style={{ maxWidth: "100px", maxHeight: "60px", width: "auto", height: "auto" }}
+        />
       </Link>
       <button
         className="navbar-toggler"
@@ -57,7 +58,6 @@ function NavBar() {
           </li>
         </ul>
       </div>
-   
     </nav>
   );
 }

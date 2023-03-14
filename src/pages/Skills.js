@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHtml5, faCss3Alt, faJsSquare, faReact,faBootstrap,faNode, faFigma, } from '@fortawesome/free-brands-svg-icons';
+import { faHtml5, faCss3Alt, faJsSquare, faReact,faBootstrap,faNode, faFigma } from '@fortawesome/free-brands-svg-icons';
 import "../App.css"; // import the CSS file with animation styles
 
 const Skills = () => {
