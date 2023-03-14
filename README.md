@@ -8,7 +8,7 @@
 
   ## Deployed Application
 
-  This application was deployed at ![my-react-portfolio](https://courses.bootcampspot.com/courses/3018/external_tools/249)
+  This application was deployed at [https://amiekisiak.github.io/my-react-portfolio/](https://amiekisiak.github.io/my-react-portfolio/)
 
   ## Screenshot
 
