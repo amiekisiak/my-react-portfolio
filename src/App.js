@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import About from './pages/About';
@@ -9,33 +9,29 @@ import Navbar from './components/NavBar';
 import Banner from './components/Banner';
 import Footer from './components/Footer';
 import Wrapper from './components/Wrapper';
-import Particle from './components/Particle'; //importing the Particle component
+import Particle from './components/Particle';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import background from './assets/img/background.png';
 
 function App() {
+  const nodeRef = useRef(null); // declare nodeRef using the useRef hook
   return (
-    <CSSTransition in={true} appear={true} timeout={1000} classNames="fade">
-      <div style={{ backgroundImage: `url(${background})` }}>
-        
+    <CSSTransition nodeRef={nodeRef} in={true} appear={true} timeout={1000} classNames="fade">
+      <div ref={nodeRef} style={{ backgroundImage: `url(${background})` }}>
         <Router>
           <div>
-            <Navbar/>
-            <Banner/>
-      
+            <Navbar />
+            <Banner />
             <Wrapper>
               <Routes>
-                <Route path="/" element={<About/>} />
-                <Route path="/projects" element={<Projects/>} />
+                <Route path="/" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
                 <Route path="/skills/*" element={<Skills />} />
                 <Route path="/contact/*" element={<Contact />} />
-                <Route path="/particle" element={<Particle />} /> {/* adding the Particle route */}
+                <Route path="/particle" element={<Particle />} />
               </Routes>
             </Wrapper>
-
-            {/* <Projects /> */}
-            {/* <Contact/> */}
             <Footer />
           </div>
         </Router>
@@ -44,4 +40,11 @@ function App() {
   );
 }
 
-export default App;
+export default function AppWrapper() {
+  return (
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+}
+

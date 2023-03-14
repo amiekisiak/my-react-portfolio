@@ -1,3 +1,4 @@
+
 /* Font used */
 @font-face {
   font-family: 'Centra';
@@ -5,7 +6,6 @@
   font-weight: 700;
 }
 
-/* Default Css */
 * {
 
   margin: 0px;
@@ -31,9 +31,12 @@ body {
 
 /*navbar styles*/
 
+
 nav.navbar {
-  background: rgba(255, 255, 255, 0.1)!important;
-  color: #ffe6e6 !important;
+  position: relative !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  font: bold !important;
   padding: 18px 0;
   position: absolute;
   width: 100%;
@@ -53,7 +56,7 @@ nav.navbar a.navbar-brand {
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
-  position:absolute;
+  position: absolute;
   margin-left: 50px;
   color: #fff !important;
   letter-spacing: 0.8px;
@@ -68,16 +71,88 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 }
 
 .navbar-nav .nav-link {
-  
-  position:relative;
+  position: relative;
   color: #fffafa;
   font-size: large;
   margin-left: 0px;
 }
 
+/* Media queries for responsive design */
+/* max width: 767px */
+@media only screen and (max-width: 767px) {
+  nav.navbar {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    font: bold !important;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition: 0.32s ease-in-out;
+  }
+
+  nav.navbar .navbar-toggler {
+    border-color: #ffffff;
+  }
+
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    margin-left: 0;
+    padding: 10px;
+    font-size: 14px;
+    position: static;
+    color: #fff !important;
+  }
+
+  nav.navbar a.navbar-brand {
+    width: auto;
+    margin-left: 10px;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+}
+
+/* Medium screens (between 768px and 991px) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    margin-left: 25px;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  nav.navbar a.navbar-brand {
+    width: auto;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: medium;
+  }
+}
+
+/* Large screens (992px and above) */
+@media only screen and (min-width: 992px) {
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    margin-left: 50px;
+    padding: 0 25px;
+    font-size: 18px;
+  }
+
+  nav.navbar a.navbar-brand {
+    width: 9%;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: large;
+  }
+}
 
 
+.navbar-brand{
+position: relative;
+margin-left: 30px;
 
+}
 
 /*banner styles*/
 
@@ -351,18 +426,14 @@ touch-action: manipulation;
   }
 }
 
-
-
-
-
-
-.ContactForm{
+#contact-form{
 width: 100%;
 padding-bottom: 170px;
 }
 
 .Contact-me{
 font-size: 2rem;
+background-color: transparent;
 padding-bottom: 20px;
 }
 .btn-primary, 
